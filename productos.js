@@ -36,11 +36,11 @@ const productos = [
     },
     {
         id: 5,
-        nombre: "Gorra LA GOMA Edition",
+        nombre: "Gorra LA GOMA",
         imagen: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-        precio: "$38.000",
+        precio: "$40.000",
         categoria: "ropa",
-        descripcion: "Gorra ajustable con logo bordado LA GOMA, disponible en varios colores."
+        descripcion: "Gorra ajustable con logo bordado LA GOMA."
     },
     {
         id: 6,
