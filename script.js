@@ -315,3 +315,4 @@ document.addEventListener('DOMContentLoaded', function() {
     `, 'color: #8A2BE2; font-size: 16px; font-weight: bold;',
        'color: #00CED1; font-size: 12px;');
 });
+
