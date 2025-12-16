@@ -60,11 +60,11 @@ const productos = [
     },
     {
         id: 8,
-        nombre: "Taza Térmica Gamer",
+        nombre: "maquillaje",
         imagen: "https://images.unsplash.com/photo-1577937927131-5a1a6df12b0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-        precio: "$28.000",
-        categoria: "otros",
-        descripcion: "Taza térmica con diseño gamer, mantiene la temperatura por 4 horas."
+        precio: "$30.000",
+        categoria: "maquillaje",
+        descripcion: "Tmaquillaje para mujeres bellas."
     }
 ];
 
