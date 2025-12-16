@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LA GOMA</title>
+    <title>LA GOMA - Hub de Experiencias Multidimensionales</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -12,7 +12,7 @@
     <header>
         <div class="container">
             <nav>
-                <a href="#" class="logo">LA<span>GOMA</span></a>
+                <a href="index.html" class="logo">LA<span>GOMA</span></a>
                 <div class="menu-toggle" id="mobile-menu">
                     <i class="fas fa-bars"></i>
                 </div>
@@ -22,6 +22,7 @@
                     <li><a href="#nosotros">Nosotros</a></li>
                     <li><a href="#galeria">Galería</a></li>
                     <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="productos.html" class="btn-productos"><i class="fas fa-shopping-bag"></i> Productos</a></li>
                 </ul>
             </nav>
         </div>
@@ -35,88 +36,65 @@
                 <p>En LA GOMA, hemos redefinido los límites del entretenimiento y el bienestar.
                 Somos mucho más que un establecimiento; somos el punto de convergencia donde el estilo, la tecnología,
                 el descanso y la celebración se encuentran bajo un mismo techo.</p>
-                <a href="#servicios" class="btn">Ver Servicios</a>
+                <a href="#servicios" class="btn">Descubre Nuestros Servicios</a>
             </div>
         </div>
     </section>
 
-    <!-- Sección de Servicios -->
-    <section id="servicios">
+    <!-- Sección de Servicios como Botones -->
+    <section id="servicios" class="services-buttons-section">
         <div class="container">
             <h2>Nuestros <span>Servicios</span></h2>
-            <div class="services-grid">
-                <!-- Servicio 1: Centro De Videojuegos -->
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Centro para jugar videojuegos">
+            <p class="section-subtitle">Haz clic en cualquier servicio para conocer más detalles</p>
+            
+            <div class="services-buttons-grid">
+                <a href="videojuegos.html" class="service-button">
+                    <div class="service-button-icon">
+                        <i class="fas fa-gamepad"></i>
                     </div>
-                    <div class="service-content">
-                        <div class="service-icon">
-                            <i class="fas fa-gamepad"></i>
-                        </div>
-                        <h3>Videojuegos</h3>
-                        <p>Contamos con la disposicion de xbox 360 y xbox one con las ultimas tendencias del momento incluyendo mercancia gamer.</p>
-                        <a href="#contacto" class="btn btn-secondary">Reservar</a>
+                    <h3>Centro de Videojuegos</h3>
+                    <p>Xbox 360, Xbox One, torneos y mercancía gamer</p>
+                    <span class="service-button-link">Ver detalles <i class="fas fa-arrow-right"></i></span>
+                </a>
+                
+                <a href="hotel.html" class="service-button">
+                    <div class="service-button-icon">
+                        <i class="fas fa-hotel"></i>
                     </div>
+                    <h3>Experiencia Hotel</h3>
+                    <p>Alojamiento premium con jacuzzi y amenities</p>
+                    <span class="service-button-link">Ver detalles <i class="fas fa-arrow-right"></i></span>
+                </a>
+                
+                <a href="cute-care.html" class="service-button">
+                    <div class="service-button-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3>Cute & Care</h3>
+                    <p>Manicure, pedicure y barbería de precisión</p>
+                    <span class="service-button-link">Ver detalles <i class="fas fa-arrow-right"></i></span>
+                </a>
+                
+                <a href="fiestas.html" class="service-button">
+                    <div class="service-button-icon">
+                        <i class="fas fa-birthday-cake"></i>
+                    </div>
+                    <h3>Fiestas & Eventos</h3>
+                    <p>Espacio privado para celebraciones especiales</p>
+                    <span class="service-button-link">Ver detalles <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+            
+            <div class="products-highlight">
+                <div class="products-highlight-content">
+                    <h3>¡Visita nuestra tienda de productos!</h3>
+                    <p>Descubre mercancía gamer exclusiva, productos de cuidado personal y más.</p>
+                    <a href="productos.html" class="btn btn-secondary">
+                        <i class="fas fa-shopping-bag"></i> Ver Catálogo Completo
+                    </a>
                 </div>
-
-                <!-- Servicio 2: Hotel -->
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Servicio de hotel">
-                    </div>
-                    <div class="service-content">
-                        <div class="service-icon">
-                            <i class="fas fa-hotel"></i>
-                        </div>
-                        <h3>Experiencia Hotel</h3>
-                        <p>¿Quieres descansar? Sal de la rutina con nuestros comodos alojamientos y quitate ese estres con nuestro jacuzzi.</p>
-                        <a href="#contacto" class="btn btn-secondary">Reservar</a>
-                    </div>
-                </div>
-
-                <!-- Servicio 3: Manicure y barberia -->
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Jacuzzi para manicure">
-                    </div>
-                    <div class="service-content">
-                        <div class="service-icon">
-                            <i class="fas fa-hot-tub"></i>
-                        </div>
-                        <h3>Cute & Care</h3>
-                        <p>La fusión definitiva entre barbería de precisión y el cuidado experto de manos y pies.</p>
-                        <a href="#contacto" class="btn btn-secondary">Reservar</a>
-                    </div>
-                </div>
-
-                <!-- Servicio 4: Fiestas -->
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Celebración de cumpleaños">
-                    </div>
-                    <div class="service-content">
-                        <div class="service-icon">
-                            <i class="fas fa-birthday-cake"></i>
-                        </div>
-                        <h3>Fiestas</h3>
-                        <p>Nuestro establecimiento privado esta diseñado para albergar eventos sociales, que ofrece un espacio acondicionado y servicios básicos para que los anfitriones celebren reuniones con comodidad.</p>
-                        <a href="#contacto" class="btn btn-secondary">Reservar</a>
-                    </div>
-                </div>
-                <!-- Servicio 5: Mercancia -->
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Celebración de cumpleaños">
-                    </div>
-                    <div class="service-content">
-                        <div class="service-icon">
-                            <i class="fas fa-birthday-cake"></i>
-                        </div>
-                        <h3>Productos</h3>
-                        <p>Nuestro establecimiento privado esta diseñado para albergar eventos sociales, que ofrece un espacio acondicionado y servicios básicos para que los anfitriones celebren reuniones con comodidad.</p>
-                        <a href="#contacto" class="btn btn-secondary">Reservar</a>
-                    </div>
+                <div class="products-highlight-image">
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Productos LA GOMA">
                 </div>
             </div>
         </div>
@@ -131,13 +109,9 @@
                     <h3>Más que un espacio, una experiencia integral</h3>
                     <p>En <strong>LA GOMA</strong> hemos creado un concepto innovador donde convergen el entretenimiento, el descanso, el cuidado personal y la celebración. Nacimos con la visión de ofrecer múltiples experiencias premium en un solo lugar, eliminando la necesidad de desplazarse entre diferentes establecimientos.</p>
                     
-                    <p>Nuestro nombre representa la versatilidad y conexión entre servicios aparentemente distintos pero complementarios: desde la precisión de nuestra barbería y el arte de la manicura, hasta la adrenalina de nuestros videojuegos y la comodidad de nuestro hospedaje.</p>
-                    
                     <p>Lo que nos distingue es nuestra capacidad para crear <strong>experiencias personalizadas</strong>. ¿Una sesión gaming seguida de un tratamiento de cuidado personal? ¿Una celebración con amigos que incluye hospedaje? ¿O simplemente un espacio donde relajarte mientras cuidas tu estilo? En LA GOMA lo hacemos posible.</p>
                     
-                    <p>Cada área ha sido diseñada con atención al detalle, equipada con tecnología de punta y atendida por especialistas apasionados. Creemos que el entretenimiento moderno debe ser multidimensional, y el autocuidado, una experiencia accesible y placentera.</p>
-                    
-                    <a href="#contacto" class="btn">Vive la experiencia</a>
+                    <a href="#contacto" class="btn">Contáctanos para más información</a>
                 </div>
                 <div class="about-image">
                     <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Interior moderno de LA GOMA">
@@ -152,22 +126,16 @@
             <h2>Nuestra <span>Galería</span></h2>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1604656853575-b07844f5a824?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Diseño de uñas para gamers">
+                    <img src="https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Sala de videojuegos">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1607779097040-65de8dde6e69?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Trabajo de manicure">
+                    <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Habitación de hotel">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Uñas decoradas">
+                    <img src="https://images.unsplash.com/photo-1607779097040-65de8dde6e69?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Servicio de manicure">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1574098520110-4d5e5d2b5d7a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Experiencia de jacuzzi">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1522338140262-f46f5913618a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Celebración de cumpleaños">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1544717305-99670f9c28f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Servicio de hotel">
+                    <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Celebración de fiesta">
                 </div>
             </div>
         </div>
@@ -180,7 +148,7 @@
             <div class="contact-container">
                 <div class="contact-info">
                     <h3>Información de Contacto</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Calle Manicure 123, Ciudad Belleza</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Calle Principal 123, Ciudad</p>
                     <p><i class="fas fa-phone"></i> +57 3153027212</p>
                     <p><i class="fas fa-envelope"></i> LAGOMA@gmail.com</p>
                     <p><i class="fas fa-clock"></i> Lunes a Sábado: 2:00 PM - 8:00 PM</p>
@@ -192,6 +160,25 @@
                         <a href="#"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
+                <div class="contact-form">
+                    <h3>Reserva o Consulta</h3>
+                    <form id="contactForm">
+                        <input type="text" placeholder="Tu nombre" required>
+                        <input type="email" placeholder="Tu correo electrónico" required>
+                        <input type="tel" placeholder="Tu teléfono" required>
+                        <select id="servicioSelect" required>
+                            <option value="" disabled selected>¿Sobre qué servicio nos contactas?</option>
+                            <option value="videojuegos">Centro de Videojuegos</option>
+                            <option value="hotel">Experiencia Hotel</option>
+                            <option value="cute-care">Cute & Care</option>
+                            <option value="fiestas">Fiestas & Eventos</option>
+                            <option value="productos">Productos/Mercancía</option>
+                            <option value="general">Consulta General</option>
+                        </select>
+                        <textarea placeholder="Tu mensaje" rows="5" required></textarea>
+                        <button type="submit" class="btn">Enviar Mensaje</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -202,34 +189,33 @@
             <div class="footer-content">
                 <div class="footer-about">
                     <div class="footer-logo">LA<span>GOMA</span></div>
-                    <p>LA GOMA es un espacio innovador de entretenimiento y cuidado personal que fusiona en un solo lugar la adrenalina de los videojuegos,
-                    el lujo del hospedaje premium, la excelencia en barbería y manicure/pedicure, y la celebración de eventos sociales. 
-                    Nuestro concepto único integra siete experiencias distintas diseñadas para ofrecer diversión, relajación y estilo.</p>
+                    <p>Un espacio innovador donde convergen entretenimiento, descanso, cuidado personal y celebración en una experiencia única y multidimensional.</p>
+                    <a href="productos.html" class="btn btn-small">
+                        <i class="fas fa-shopping-bag"></i> Tienda de Productos
+                    </a>
+                </div>
+                <div class="footer-links">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="videojuegos.html">Centro de Videojuegos</a></li>
+                        <li><a href="hotel.html">Experiencia Hotel</a></li>
+                        <li><a href="cute-care.html">Cute & Care</a></li>
+                        <li><a href="fiestas.html">Fiestas & Eventos</a></li>
+                        <li><a href="productos.html">Productos & Mercancía</a></li>
+                    </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Enlaces Rápidos</h4>
                     <ul>
                         <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#servicios">Servicios</a></li>
                         <li><a href="#nosotros">Nosotros</a></li>
                         <li><a href="#galeria">Galería</a></li>
                         <li><a href="#contacto">Contacto</a></li>
                     </ul>
                 </div>
-                <div class="footer-services">
-                    <h4>Nuestros Servicios</h4>
-                    <ul>
-                        <li>Centro de Videojuegos</li>
-                        <li>Venta de Mercancía Gamer</li>
-                        <li>Hospedaje Premium</li>
-                        <li>Barbería & Estilo</li>
-                        <li>Manicure & Pedicure</li>
-                        <li>Espacios para Fiestas</li>
-                    </ul>
-                </div>
             </div>
             <div class="copyright">
-                <p>2025 LA GOMA. Todos los derechos reservados.</p>
+                <p>&copy; 2025 LA GOMA. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
