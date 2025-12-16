@@ -1,11 +1,12 @@
-// ===== SCRIPT PRINCIPAL LA GOMA =====
+// ===== SCRIPT PRINCIPAL LA GOMA - VERSIÓN CORREGIDA =====
 
 // Esperar a que el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('Script cargado correctamente');
+    
     // ===== ELEMENTOS DEL DOM =====
     const mobileMenu = document.getElementById('mobile-menu');
     const navLinks = document.querySelector('.nav-links');
-    const contactForm = document.getElementById('contactForm');
     const navItems = document.querySelectorAll('.nav-links a');
     
     // ===== MENÚ MÓVIL =====
@@ -33,30 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.overflow = ''; // Restaurar scroll
         });
     });
-    
-    // ===== FORMULARIO DE CONTACTO =====
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Obtener valores del formulario
-            const nombre = this.querySelector('input[type="text"]').value;
-            const servicio = this.querySelector('#servicioSelect').value;
-            
-            // Validación básica
-            if (!nombre) {
-                showAlert('Por favor ingresa tu nombre', 'error');
-                return;
-            }
-            
-            // Simular envío exitoso
-            showAlert(`¡Gracias ${nombre}! Tu consulta ha sido recibida. Te contactaremos en menos de 24 horas.`, 'success');
-            
-            // Resetear formulario
-            this.reset();
-            this.querySelector('#servicioSelect').selectedIndex = 0;
-        });
-    }
     
     // ===== SMOOTH SCROLL PARA ENLACES INTERNOS =====
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -108,85 +85,14 @@ document.addEventListener('DOMContentLoaded', function() {
         highlightActiveNavLink();
     });
     
-    // ===== ANIMACIÓN DE ELEMENTOS AL HACER SCROLL =====
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animated');
-            }
-        });
-    }, observerOptions);
-    
-    // Observar las tarjetas de servicio
-    document.querySelectorAll('.servicio-completo').forEach(card => {
-        observer.observe(card);
-    });
-    
-    // Observar los items de servicio
-    document.querySelectorAll('.servicio-item').forEach(item => {
-        observer.observe(item);
-    });
-    
-    // ===== FUNCIÓN PARA MOSTRAR ALERTAS =====
-    function showAlert(message, type) {
-        // Crear elemento de alerta
-        const alertDiv = document.createElement('div');
-        alertDiv.className = `alert alert-${type}`;
-        alertDiv.textContent = message;
-        
-        // Estilos de la alerta
-        alertDiv.style.position = 'fixed';
-        alertDiv.style.top = '20px';
-        alertDiv.style.right = '20px';
-        alertDiv.style.padding = '15px 25px';
-        alertDiv.style.borderRadius = '10px';
-        alertDiv.style.color = 'white';
-        alertDiv.style.fontWeight = '600';
-        alertDiv.style.zIndex = '9999';
-        alertDiv.style.boxShadow = '0 5px 15px rgba(0,0,0,0.2)';
-        alertDiv.style.maxWidth = '400px';
-        alertDiv.style.animation = 'slideInRight 0.3s ease';
-        alertDiv.style.display = 'flex';
-        alertDiv.style.alignItems = 'center';
-        alertDiv.style.gap = '10px';
-        
-        // Icono según tipo
-        const icon = document.createElement('i');
-        icon.className = type === 'success' ? 'fas fa-check-circle' : 'fas fa-exclamation-circle';
-        alertDiv.prepend(icon);
-        
-        // Colores según tipo
-        if (type === 'success') {
-            alertDiv.style.backgroundColor = '#4CAF50';
-            alertDiv.style.borderLeft = '4px solid #2E7D32';
-        } else {
-            alertDiv.style.backgroundColor = '#F44336';
-            alertDiv.style.borderLeft = '4px solid #C62828';
-        }
-        
-        // Añadir al documento
-        document.body.appendChild(alertDiv);
-        
-        // Remover después de 4 segundos
-        setTimeout(() => {
-            alertDiv.style.animation = 'slideOutRight 0.3s ease';
-            setTimeout(() => {
-                if (alertDiv.parentNode) {
-                    document.body.removeChild(alertDiv);
-                }
-            }, 300);
-        }, 4000);
-    }
+    // ===== INICIALIZAR MODALES DE SERVICIOS =====
+    inicializarModalesServicios();
     
     // ===== RESALTAR ENLACE ACTIVO EN NAVEGACIÓN =====
     function highlightActiveNavLink() {
         const sections = document.querySelectorAll('section');
         const scrollPosition = window.scrollY + 100;
+        const navItems = document.querySelectorAll('.nav-links a');
         
         let currentSectionId = '';
         
@@ -207,78 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // ===== ANIMACIONES CSS DINÁMICAS =====
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes slideInRight {
-            from {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-        
-        @keyframes slideOutRight {
-            from {
-                transform: translateX(0);
-                opacity: 1;
-            }
-            to {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-        }
-        
-        .servicio-completo {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        
-        .servicio-completo.animated {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .servicio-item {
-            opacity: 0;
-            transform: translateX(-20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        
-        .servicio-item:nth-child(even) {
-            transform: translateX(20px);
-        }
-        
-        .servicio-item.animated {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
-        /* Animación para precios */
-        .precio-item {
-            opacity: 0;
-            transform: scale(0.9);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-        
-        .precio-item.animated {
-            opacity: 1;
-            transform: scale(1);
-        }
-    `;
-    document.head.appendChild(style);
-    
-    // Observar elementos de precios
-    document.querySelectorAll('.precio-item').forEach(item => {
-        observer.observe(item);
-    });
-    
-    // ===== INICIALIZAR ANIMACIONES AL CARGAR =====
-    // Forzar un pequeño delay para que se apliquen las animaciones
+    // ===== INICIALIZAR AL CARGAR =====
     setTimeout(() => {
         highlightActiveNavLink();
         
@@ -309,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
     🎉 Fiestas & Eventos
     
     Contacto: +57 315 302 7212
-    Email: contacto@lagoma.com
+    Email: LAGOMA@gmail.com
     
     ===============================
     `, 'color: #8A2BE2; font-size: 16px; font-weight: bold;',
@@ -443,10 +278,29 @@ const serviciosDetalles = {
     }
 };
 
+// Función para inicializar los modales
+function inicializarModalesServicios() {
+    console.log('Inicializando modales de servicios...');
+    
+    // Agregar eventos a los botones "Ver detalles"
+    document.querySelectorAll('.btn-detalles').forEach(boton => {
+        boton.addEventListener('click', function() {
+            const servicioId = this.getAttribute('data-servicio');
+            console.log('Mostrando modal para:', servicioId);
+            mostrarModalServicio(servicioId);
+        });
+    });
+    
+    console.log('Botones encontrados:', document.querySelectorAll('.btn-detalles').length);
+}
+
 // Crear y mostrar modal
 function mostrarModalServicio(servicioId) {
     const servicio = serviciosDetalles[servicioId];
-    if (!servicio) return;
+    if (!servicio) {
+        console.error('Servicio no encontrado:', servicioId);
+        return;
+    }
     
     // Crear modal
     const modalHTML = `
@@ -528,26 +382,6 @@ function mostrarModalServicio(servicioId) {
                 const headerHeight = document.querySelector('header').offsetHeight;
                 const targetPosition = contactoSection.offsetTop - headerHeight - 20;
                 window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-                
-                // Seleccionar automáticamente el servicio en el formulario
-                const selectServicio = document.getElementById('servicioSelect');
-                if (selectServicio) {
-                    let optionValue;
-                    switch(servicioId) {
-                        case 'videojuegos': optionValue = 'gaming'; break;
-                        case 'hotel': optionValue = 'hotel'; break;
-                        case 'cute-care': optionValue = 'cute-care'; break;
-                        case 'fiestas': optionValue = 'fiestas'; break;
-                        default: optionValue = 'info';
-                    }
-                    
-                    for (let i = 0; i < selectServicio.options.length; i++) {
-                        if (selectServicio.options[i].value === optionValue) {
-                            selectServicio.selectedIndex = i;
-                            break;
-                        }
-                    }
-                }
             }
         }, 400);
     });
@@ -558,191 +392,190 @@ function mostrarModalServicio(servicioId) {
     }, 10);
 }
 
-// Configurar eventos para los botones "Ver detalles"
-document.addEventListener('DOMContentLoaded', function() {
-    // Agregar eventos a los botones existentes
-    document.querySelectorAll('.btn-detalles').forEach(boton => {
-        boton.addEventListener('click', function() {
-            const servicioId = this.getAttribute('data-servicio');
-            mostrarModalServicio(servicioId);
-        });
-    });
-    
-    // También agregar estilos CSS para el modal
-    const modalStyles = document.createElement('style');
-    modalStyles.textContent = `
-        .modal-servicio {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 10000;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            padding: 20px;
-            overflow-y: auto;
-        }
-        
-        .modal-contenido {
-            background: white;
-            border-radius: 20px;
-            width: 100%;
-            max-width: 900px;
-            max-height: 90vh;
-            overflow-y: auto;
-            position: relative;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-            animation: modalAppear 0.4s ease;
-        }
-        
-        @keyframes modalAppear {
-            from {
+// Asegurarse de que los estilos del modal estén presentes
+function agregarEstilosModal() {
+    if (!document.querySelector('#estilos-modal')) {
+        const estilo = document.createElement('style');
+        estilo.id = 'estilos-modal';
+        estilo.textContent = `
+            .modal-servicio {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.85);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 10000;
                 opacity: 0;
-                transform: translateY(-30px) scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-        
-        .modal-cerrar {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: var(--dark);
-            color: white;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            font-size: 1.2rem;
-            cursor: pointer;
-            z-index: 10;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .modal-cerrar:hover {
-            background: var(--primary);
-            transform: rotate(90deg);
-        }
-        
-        .modal-header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 40px;
-            border-radius: 20px 20px 0 0;
-            text-align: center;
-            position: relative;
-        }
-        
-        .modal-icono {
-            font-size: 4rem;
-            margin-bottom: 20px;
-        }
-        
-        .modal-header h3 {
-            color: white;
-            font-size: 2.2rem;
-            margin-bottom: 0;
-        }
-        
-        .modal-body {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            padding: 40px;
-        }
-        
-        .modal-imagen img {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        
-        .modal-descripcion {
-            line-height: 1.7;
-        }
-        
-        .modal-descripcion h4 {
-            color: var(--primary);
-            margin-top: 20px;
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .modal-descripcion ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        .modal-descripcion ul li {
-            margin-bottom: 8px;
-            padding-left: 25px;
-            position: relative;
-        }
-        
-        .modal-descripcion ul li:before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-weight: bold;
-        }
-        
-        .modal-footer {
-            padding: 30px 40px;
-            background-color: #f8f9fa;
-            border-radius: 0 0 20px 20px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .btn-contacto {
-            background: linear-gradient(135deg, #4CAF50, #2E7D32);
-            color: white;
-        }
-        
-        .btn-contacto:hover {
-            background: linear-gradient(135deg, #2E7D32, #1B5E20);
-        }
-        
-        @media (max-width: 768px) {
-            .modal-body {
-                grid-template-columns: 1fr;
+                transition: opacity 0.3s ease;
+                padding: 20px;
+                overflow-y: auto;
             }
             
-            .modal-imagen img {
-                height: 250px;
+            .modal-contenido {
+                background: white;
+                border-radius: 20px;
+                width: 100%;
+                max-width: 900px;
+                max-height: 90vh;
+                overflow-y: auto;
+                position: relative;
+                box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+                animation: modalAppear 0.4s ease;
             }
             
-            .modal-footer {
-                flex-direction: column;
+            @keyframes modalAppear {
+                from {
+                    opacity: 0;
+                    transform: translateY(-30px) scale(0.95);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0) scale(1);
+                }
+            }
+            
+            .modal-cerrar {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                background: var(--dark);
+                color: white;
+                border: none;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                font-size: 1.2rem;
+                cursor: pointer;
+                z-index: 10;
+                transition: var(--transition);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .modal-cerrar:hover {
+                background: var(--primary);
+                transform: rotate(90deg);
             }
             
             .modal-header {
-                padding: 30px 20px;
+                background: linear-gradient(135deg, var(--primary), var(--secondary));
+                color: white;
+                padding: 40px;
+                border-radius: 20px 20px 0 0;
+                text-align: center;
+                position: relative;
             }
             
-            .modal-body, .modal-footer {
-                padding: 20px;
+            .modal-icono {
+                font-size: 4rem;
+                margin-bottom: 20px;
             }
-        }
-    `;
-    document.head.appendChild(modalStyles);
+            
+            .modal-header h3 {
+                color: white;
+                font-size: 2.2rem;
+                margin-bottom: 0;
+            }
+            
+            .modal-body {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+                padding: 40px;
+            }
+            
+            .modal-imagen img {
+                width: 100%;
+                height: 350px;
+                object-fit: cover;
+                border-radius: 15px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+            
+            .modal-descripcion {
+                line-height: 1.7;
+            }
+            
+            .modal-descripcion h4 {
+                color: var(--primary);
+                margin-top: 20px;
+                margin-bottom: 10px;
+                font-size: 1.3rem;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .modal-descripcion ul {
+                list-style: none;
+                padding-left: 0;
+            }
+            
+            .modal-descripcion ul li {
+                margin-bottom: 8px;
+                padding-left: 25px;
+                position: relative;
+            }
+            
+            .modal-descripcion ul li:before {
+                content: '✓';
+                position: absolute;
+                left: 0;
+                color: var(--primary);
+                font-weight: bold;
+            }
+            
+            .modal-footer {
+                padding: 30px 40px;
+                background-color: #f8f9fa;
+                border-radius: 0 0 20px 20px;
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+            
+            .btn-contacto {
+                background: linear-gradient(135deg, #4CAF50, #2E7D32);
+                color: white;
+            }
+            
+            .btn-contacto:hover {
+                background: linear-gradient(135deg, #2E7D32, #1B5E20);
+            }
+            
+            @media (max-width: 768px) {
+                .modal-body {
+                    grid-template-columns: 1fr;
+                }
+                
+                .modal-imagen img {
+                    height: 250px;
+                }
+                
+                .modal-footer {
+                    flex-direction: column;
+                }
+                
+                .modal-header {
+                    padding: 30px 20px;
+                }
+                
+                .modal-body, .modal-footer {
+                    padding: 20px;
+                }
+            }
+        `;
+        document.head.appendChild(estilo);
+    }
+}
+
+// Agregar estilos al cargar
+document.addEventListener('DOMContentLoaded', function() {
+    agregarEstilosModal();
 });
