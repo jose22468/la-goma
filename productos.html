@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LA GOMA - Productos y Mercancía</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="productos.css">
+</head>
+<body>
+    <!-- Header y navegación -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">LA<span>GOMA</span></a>
+                <div class="menu-toggle" id="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#servicios">Servicios</a></li>
+                    <li><a href="index.html#nosotros">Nosotros</a></li>
+                    <li><a href="index.html#galeria">Galería</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                    <li><a href="productos.html" class="btn-productos active"><i class="fas fa-shopping-bag"></i> Productos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero de Productos -->
+    <section class="hero productos-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Tienda de Productos LA GOMA</h1>
+                <p>Descubre nuestra exclusiva mercancía gamer, productos de cuidado personal y artículos especiales diseñados para los verdaderos amantes del estilo y el entretenimiento.</p>
+                <div class="hero-buttons">
+                    <a href="#catalogo" class="btn">Ver Catálogo</a>
+                    <a href="index.html" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i> Volver al Inicio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Información de compra -->
+    <section class="purchase-info">
+        <div class="container">
+            <div class="info-card">
+                <div class="info-icon">
+                    <i class="fas fa-store"></i>
+                </div>
+                <div class="info-content">
+                    <h3>Compra en Tienda Física</h3>
+                    <p>Todos nuestros productos están disponibles exclusivamente en nuestro establecimiento físico. Visítanos para ver, tocar y adquirir tus artículos favoritos con la asesoría de nuestro personal.</p>
+                    <p class="highlight">📍 Ubicación: Calle Principal 123, Ciudad</p>
+                    <p class="highlight">🕒 Horario de compras: Lunes a Sábado 2:00 PM - 8:00 PM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catálogo de Productos -->
+    <section id="catalogo" class="catalogo">
+        <div class="container">
+            <h2>Nuestro <span>Catálogo</span></h2>
+            <p class="section-subtitle">Explora nuestra selección de productos exclusivos</p>
+            
+            <!-- Filtros de categorías -->
+            <div class="categorias">
+                <button class="categoria-btn active" data-categoria="todos">Todos</button>
+                <button class="categoria-btn" data-categoria="gamer">Mercancía Gamer</button>
+                <button class="categoria-btn" data-categoria="cuidado">Cuidado Personal</button>
+                <button class="categoria-btn" data-categoria="ropa">Ropa y Accesorios</button>
+                <button class="categoria-btn" data-categoria="otros">Otros Productos</button>
+            </div>
+            
+            <!-- Contenedor de productos (se llena con JavaScript) -->
+            <div id="productos-container" class="productos-grid">
+                <!-- Los productos se cargan dinámicamente aquí -->
+            </div>
+            
+            <!-- Instrucciones para actualizar catálogo -->
+            <div class="admin-info">
+                <h3><i class="fas fa-tools"></i> ¿Cómo actualizar el catálogo?</h3>
+                <p>Para agregar, eliminar o modificar productos, solo necesitas editar el archivo <code>productos.js</code> y actualizar el array de productos.</p>
+                <div class="code-example">
+                    <p><strong>Estructura de un producto:</strong></p>
+                    <pre>{
+    id: 1,
+    nombre: "Nombre del producto",
+    imagen: "url-de-la-imagen.jpg",
+    precio: "$XX.XXX",
+    categoria: "gamer",
+    descripcion: "Descripción detallada del producto"
+}</pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">LA<span>GOMA</span></div>
+                    <p>Un espacio innovador donde convergen entretenimiento, descanso, cuidado personal y celebración en una experiencia única y multidimensional.</p>
+                    <a href="index.html" class="btn btn-small">
+                        <i class="fas fa-home"></i> Volver al Inicio
+                    </a>
+                </div>
+                <div class="footer-links">
+                    <h4>Nuestros Servicios</h4>
+                    <ul>
+                        <li><a href="videojuegos.html">Centro de Videojuegos</a></li>
+                        <li><a href="hotel.html">Experiencia Hotel</a></li>
+                        <li><a href="cute-care.html">Cute & Care</a></li>
+                        <li><a href="fiestas.html">Fiestas & Eventos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="index.html#nosotros">Nosotros</a></li>
+                        <li><a href="index.html#galeria">Galería</a></li>
+                        <li><a href="index.html#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 LA GOMA. Todos los derechos reservados. | Productos disponibles solo en tienda física.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="productos.js"></script>
+</body>
+</html>
