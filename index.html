@@ -41,49 +41,83 @@
         </div>
     </section>
 
-    <!-- Sección de Servicios como Botones -->
-    <section id="servicios" class="services-buttons-section">
-        <div class="container">
-            <h2>Nuestros <span>Servicios</span></h2>
-            <p class="section-subtitle">Haz clic en cualquier servicio para conocer más detalles</p>
+    <!-- Sección de Servicios -->
+            <section id="servicios">
+                <div class="container">
+                    <h2>Nuestros <span>Servicios</span></h2>
+                    <p class="section-subtitle">Haz clic en "Ver detalles" para conocer más sobre cada experiencia</p>
+                    
+                    <div class="services-grid">
+                        <!-- Servicio 1: Videojuegos -->
+                        <div class="service-card">
+                            <div class="service-img">
+                                <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Centro de videojuegos">
+                            </div>
+                            <div class="service-content">
+                                <div class="service-icon">
+                                    <i class="fas fa-gamepad"></i>
+                                </div>
+                                <h3>Videojuegos</h3>
+                                <p>Contamos con Xbox 360 y Xbox One con las últimas tendencias del momento incluyendo mercancía gamer.</p>
+                                <button class="btn btn-secondary btn-detalles" data-servicio="videojuegos">
+                                    Ver detalles
+                                </button>
+                            </div>
+                        </div>
             
-            <div class="services-buttons-grid">
-                <a href="videojuegos.html" class="service-button">
-                    <div class="service-button-icon">
-                        <i class="fas fa-gamepad"></i>
+                        <!-- Servicio 2: Hotel -->
+                        <div class="service-card">
+                            <div class="service-img">
+                                <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Servicio de hotel">
+                            </div>
+                            <div class="service-content">
+                                <div class="service-icon">
+                                    <i class="fas fa-hotel"></i>
+                                </div>
+                                <h3>Experiencia Hotel</h3>
+                                <p>¿Quieres descansar? Sal de la rutina con nuestros cómodos alojamientos y quítate ese estrés con nuestro jacuzzi.</p>
+                                <button class="btn btn-secondary btn-detalles" data-servicio="hotel">
+                                    Ver detalles
+                                </button>
+                            </div>
+                        </div>
+            
+                        <!-- Servicio 3: Cute & Care -->
+                        <div class="service-card">
+                            <div class="service-img">
+                                <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Manicure y barbería">
+                            </div>
+                            <div class="service-content">
+                                <div class="service-icon">
+                                    <i class="fas fa-spa"></i>
+                                </div>
+                                <h3>Cute & Care</h3>
+                                <p>La fusión definitiva entre barbería de precisión y el cuidado experto de manos y pies.</p>
+                                <button class="btn btn-secondary btn-detalles" data-servicio="cute-care">
+                                    Ver detalles
+                                </button>
+                            </div>
+                        </div>
+            
+                        <!-- Servicio 4: Fiestas -->
+                        <div class="service-card">
+                            <div class="service-img">
+                                <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Celebración de fiestas">
+                            </div>
+                            <div class="service-content">
+                                <div class="service-icon">
+                                    <i class="fas fa-birthday-cake"></i>
+                                </div>
+                                <h3>Fiestas</h3>
+                                <p>Nuestro establecimiento privado está diseñado para albergar eventos sociales.</p>
+                                <button class="btn btn-secondary btn-detalles" data-servicio="fiestas">
+                                    Ver detalles
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Centro de Videojuegos</h3>
-                    <p>Xbox 360, Xbox One, torneos y mercancía gamer</p>
-                    <span class="service-button-link">Ver detalles <i class="fas fa-arrow-right"></i></span>
-                </a>
-                
-                <a href="hotel.html" class="service-button">
-                    <div class="service-button-icon">
-                        <i class="fas fa-hotel"></i>
-                    </div>
-                    <h3>Experiencia Hotel</h3>
-                    <p>Alojamiento premium con jacuzzi y amenities</p>
-                    <span class="service-button-link">Ver detalles <i class="fas fa-arrow-right"></i></span>
-                </a>
-                
-                <a href="cute-care.html" class="service-button">
-                    <div class="service-button-icon">
-                        <i class="fas fa-spa"></i>
-                    </div>
-                    <h3>Cute & Care</h3>
-                    <p>Manicure, pedicure y barbería de precisión</p>
-                    <span class="service-button-link">Ver detalles <i class="fas fa-arrow-right"></i></span>
-                </a>
-                
-                <a href="fiestas.html" class="service-button">
-                    <div class="service-button-icon">
-                        <i class="fas fa-birthday-cake"></i>
-                    </div>
-                    <h3>Fiestas & Eventos</h3>
-                    <p>Espacio privado para celebraciones especiales</p>
-                    <span class="service-button-link">Ver detalles <i class="fas fa-arrow-right"></i></span>
-                </a>
-            </div>
+                </div>
+            </section>
             
             <div class="products-highlight">
                 <div class="products-highlight-content">
