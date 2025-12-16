@@ -1,549 +1,152 @@
-/* Variables de color */
-:root {
-    --primary: #ff6b8b;
-    --secondary: #7c5fe3;
-    --accent: #00d2be;
-    --dark: #2a2a3c;
-    --light: #f8f9fa;
-    --text: #333333;
-    --shadow: 0 5px 15px rgba(0,0,0,0.1);
-    --transition: all 0.3s ease;
-}
+/* ===== ESTILOS PARA PÁGINA PRINCIPAL CON BOTONES ===== */
 
-/* Estilos generales */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: var(--text);
-    background-color: #fff;
-}
-
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-section {
-    padding: 80px 0;
-}
-
-h1, h2, h3, h4 {
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 20px;
-}
-
-h1 {
-    font-size: 3.5rem;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
-
-h2 {
-    font-size: 2.5rem;
-    text-align: center;
-    color: var(--dark);
-    margin-bottom: 50px;
-}
-
-h2 span {
-    color: var(--primary);
-}
-
-h3 {
-    font-size: 1.8rem;
-    color: var(--secondary);
-}
-
-p {
-    margin-bottom: 15px;
-    font-size: 1.1rem;
-}
-
-.btn {
-    display: inline-block;
+/* Botón de productos en navegación */
+.btn-productos {
     background-color: var(--primary);
     color: white;
-    padding: 12px 30px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: var(--transition);
-    border: none;
-    cursor: pointer;
-    box-shadow: var(--shadow);
-}
-
-.btn:hover {
-    background-color: var(--secondary);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-
-.btn-secondary {
-    background-color: var(--secondary);
-}
-
-.btn-secondary:hover {
-    background-color: var(--primary);
-}
-
-/* Header y navegación */
-header {
-    background-color: var(--dark);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
-}
-
-.logo {
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: white;
-    text-decoration: none;
-}
-
-.logo span {
-    color: var(--primary);
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-}
-
-.nav-links li {
-    margin-left: 30px;
-}
-
-.nav-links a {
-    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
     text-decoration: none;
     font-weight: 600;
     transition: var(--transition);
 }
 
-.nav-links a:hover {
-    color: var(--primary);
+.btn-productos:hover {
+    background-color: var(--secondary);
+    transform: translateY(-2px);
 }
 
-.menu-toggle {
-    display: none;
-    font-size: 1.5rem;
-    color: white;
-    cursor: pointer;
-}
-
-/* Hero section */
-.hero {
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1604654894610-df63bc536371?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: white;
-}
-
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.hero p {
-    font-size: 1.3rem;
-    margin-bottom: 30px;
-    color: #eee;
-}
-
-/* Sección de servicios */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
-
-.service-card {
-    background-color: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-    text-align: center;
-}
-
-.service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-}
-
-.service-img {
-    height: 200px;
-    overflow: hidden;
-}
-
-.service-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: var(--transition);
-}
-
-.service-card:hover .service-img img {
-    transform: scale(1.1);
-}
-
-.service-content {
-    padding: 25px;
-}
-
-.service-icon {
-    font-size: 2.5rem;
-    color: var(--primary);
-    margin-bottom: 15px;
-}
-
-/* Sección sobre nosotros */
-.about {
+/* Sección de servicios como botones */
+.services-buttons-section {
     background-color: #f8f9fa;
 }
 
-.about-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 50px;
-    align-items: center;
-}
-
-.about-text {
-    padding-right: 20px;
-}
-
-.about-image img {
-    width: 100%;
-    border-radius: 15px;
-    box-shadow: var(--shadow);
-}
-
-/* Sección de galería */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.gallery-item {
-    height: 250px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: var(--transition);
-}
-
-.gallery-item:hover img {
-    transform: scale(1.1);
-}
-
-/* Sección de contacto */
-.contact {
-    background-color: var(--dark);
-    color: white;
-}
-
-.contact h2 {
-    color: white;
-}
-
-.contact-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 50px;
-}
-
-.contact-info h3 {
-    color: var(--primary);
-}
-
-.contact-info p {
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-}
-
-.contact-info i {
-    margin-right: 10px;
-    color: var(--accent);
-}
-
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: rgba(255,255,255,0.1);
-    color: white;
-    font-size: 1rem;
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-    color: #ccc;
-}
-
-.contact-form select option {
-    background-color: var(--dark);
-    color: white;
-}
-
-.contact-form textarea {
-    height: 150px;
-    resize: vertical;
-}
-
-/* Footer */
-footer {
-    background-color: #1a1a2e;
-    color: #aaa;
-    padding: 60px 0 30px;
+.section-subtitle {
     text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 50px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.footer-content {
+.services-buttons-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    margin-bottom: 40px;
-    text-align: left;
+    gap: 25px;
+    margin-bottom: 60px;
 }
 
-.footer-logo {
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: white;
-    margin-bottom: 15px;
-}
-
-.footer-logo span {
-    color: var(--primary);
-}
-
-.footer-links ul,
-.footer-services ul {
-    list-style: none;
-}
-
-.footer-links ul li,
-.footer-services ul li {
-    margin-bottom: 10px;
-}
-
-.footer-links a {
-    color: #aaa;
+.service-button {
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
     text-decoration: none;
+    color: var(--text);
+    display: block;
     transition: var(--transition);
-}
-
-.footer-links a:hover {
-    color: var(--primary);
-}
-
-.social-icons {
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 20px;
-}
-
-.social-icons a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: var(--primary);
-    color: white;
-    border-radius: 50%;
-    margin-right: 10px;
-    text-decoration: none;
-    transition: var(--transition);
-}
-
-.social-icons a:hover {
-    background-color: var(--secondary);
-    transform: translateY(-5px);
-}
-
-.copyright {
-    padding-top: 30px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-}
-
-/* Responsive */
-@media (max-width: 992px) {
-    h1 {
-        font-size: 2.8rem;
-    }
-    
-    h2 {
-        font-size: 2.2rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
-    
-    .nav-links {
-        position: fixed;
-        top: 70px;
-        left: -100%;
-        width: 100%;
-        height: calc(100vh - 70px);
-        background-color: var(--dark);
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        padding-top: 50px;
-        transition: var(--transition);
-    }
-    
-    .nav-links.active {
-        left: 0;
-    }
-    
-    .nav-links li {
-        margin: 15px 0;
-    }
-    
-    h1 {
-        font-size: 2.5rem;
-    }
-    
-    h2 {
-        font-size: 2rem;
-    }
-    
-    section {
-        padding: 60px 0;
-    }
-    
-    .footer-content {
-        text-align: center;
-    }
-    
-    .social-icons {
-        justify-content: center;
-    }
-}
-
-@media (max-width: 576px) {
-    h1 {
-        font-size: 2rem;
-    }
-    
-    h2 {
-        font-size: 1.8rem;
-    }
-    
-    .hero p {
-        font-size: 1.1rem;
-    }
-    
-    .btn {
-        padding: 10px 25px;
-    }
-    
-    .contact-form input,
-    .contact-form select,
-    .contact-form textarea {
-        padding: 12px;
-    }
-}
-/* MODIFICACIONES PARA LA GOMA - Añade estos estilos al final de tu archivo styles.css */
-
-/* 1. Nuevo color principal para la marca */
-:root {
-    --primary: #8A2BE2; /* Cambia el rosa por un violeta vibrante */
-    --secondary: #00CED1; /* Complemento turquesa */
-}
-
-/* 2. Ajuste del Hero con imagen acorde a los nuevos servicios */
-.hero {
-    /* Reemplaza la imagen de manicure por una que represente los 4 servicios */
-    background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.7)), 
-                url('https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
-    background-size: cover;
-    background-position: center;
-}
-
-/* 3. Ajuste de imágenes de servicio - Puedes cambiar URLs aquí si lo prefieres */
-/* 4. Estilo para el nombre "LA GOMA" en el logo */
-.logo {
-    font-family: 'Segoe UI', Impact, sans-serif;
-    font-weight: 900;
-    letter-spacing: 1px;
+    box-shadow: var(--shadow);
+    border: 2px solid transparent;
+    text-align: center;
     position: relative;
+    overflow: hidden;
 }
 
-/* Efecto especial para el logo */
-.logo:after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, var(--primary), var(--secondary));
-    bottom: -5px;
-    left: 0;
+.service-button:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    border-color: var(--primary);
 }
 
-/* 5. Ajuste de iconos para servicios específicos */
-.service-card:nth-child(3) .service-icon { /* Para Cute & Care */
+.service-button-icon {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+    transition: var(--transition);
+}
+
+.service-button:hover .service-button-icon {
+    transform: scale(1.2);
     color: var(--secondary);
 }
 
-.service-card:nth-child(4) .service-icon { /* Para Fiestas */
-    color: #FFD700; /* Color dorado para celebraciones */
+.service-button h3 {
+    color: var(--dark);
+    margin-bottom: 10px;
+    font-size: 1.5rem;
 }
 
-/* 6. Mejora de la galería con efecto de polaroid */
-.gallery-item {
-    background: white;
-    padding: 10px 10px 20px 10px;
-    border-radius: 3px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+.service-button p {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.service-button-link {
+    color: var(--primary);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
     transition: var(--transition);
 }
 
-.gallery-item:hover {
-    transform: rotate(1deg) scale(1.03);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+.service-button:hover .service-button-link {
+    color: var(--secondary);
+    transform: translateX(5px);
+}
+
+/* Destacado de productos */
+.products-highlight {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-radius: 20px;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    color: white;
+    margin-top: 40px;
+}
+
+.products-highlight-content h3 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.products-highlight-content p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+.products-highlight-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.btn-small {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+/* Responsive para la página principal */
+@media (max-width: 768px) {
+    .services-buttons-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .products-highlight {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .service-button {
+        padding: 25px;
+    }
 }
