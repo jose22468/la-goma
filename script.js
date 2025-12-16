@@ -187,3 +187,49 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(style);
 });
+
+// MODIFICACIONES PARA LA GOMA - Actualiza en tu archivo script.js
+
+// Busca la función 'getServiceName' (al final del archivo) y cámbiala por esta:
+
+function getServiceName(value) {
+    const services = {
+        'gamer': 'Centro de Videojuegos',
+        'hotel': 'Experiencia Hotel',
+        'jacuzzi': 'Cute & Care (Manicure & Barbería)',
+        'cumpleaños': 'Fiestas y Eventos'
+    };
+    return services[value] || 'servicio seleccionado';
+}
+
+// Agrega también esta función para mejorar el formulario (opcional):
+document.addEventListener('DOMContentLoaded', function() {
+    // ... tu código existente ...
+    
+    // Mejora: Actualizar opciones del select del formulario para que coincidan con los servicios reales
+    const servicioSelect = document.getElementById('servicioSelect');
+    if (servicioSelect) {
+        // Limpiar opciones actuales
+        servicioSelect.innerHTML = '';
+        
+        // Agregar nuevas opciones acordes a LA GOMA
+        const nuevasOpciones = [
+            {value: '', text: 'Selecciona un servicio', disabled: true},
+            {value: 'gamer', text: 'Centro de Videojuegos'},
+            {value: 'hotel', text: 'Experiencia Hotel'},
+            {value: 'jacuzzi', text: 'Cute & Care (Manicure & Barbería)'},
+            {value: 'cumpleaños', text: 'Fiestas y Eventos Privados'}
+        ];
+        
+        nuevasOpciones.forEach(opcion => {
+            const optionElement = document.createElement('option');
+            optionElement.value = opcion.value;
+            optionElement.textContent = opcion.text;
+            if (opcion.disabled) {
+                optionElement.disabled = true;
+                optionElement.selected = true;
+            }
+            servicioSelect.appendChild(optionElement);
+        });
+    }
+});
